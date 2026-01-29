@@ -19,12 +19,12 @@ app.get('/', (req, res) => {
 
 app.post('/users', async (req, res) => {
   try {
-    const { name, age, email } = req.body;
+    const { name, age } = req.body;
 
-    if (!name || !age || !email) { 
-      return res.status(400).json({error: 'Name, age, and email are required'});
+    if (!name || !age) { 
+      return res.status(400).json({error: 'Name and age are required'});
     }
-    console.log('Received user data:', { name, age, email });
+    console.log('Received user data:', { name, age });
 
     const newUser = new User(req.body);
 
