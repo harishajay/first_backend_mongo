@@ -84,6 +84,8 @@ app.delete('/users/delete', async (req, res) => {
 
 async function startServer() {
   try {
+
+    console.log('Connecting to MongoDB...');
     await mongoose.connect(MONGODB_URI);
     console.log('MongoDB connected');
 
@@ -97,5 +99,4 @@ async function startServer() {
 }
 console.log("Server setup complete");
 startServer();
-
 
