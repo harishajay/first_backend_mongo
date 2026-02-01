@@ -17,6 +17,15 @@ app.get('/', (req, res) => {
       res.send('Hello, Harish i hope you are doing well!');
     });
 
+app.get('/users', async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    res.status(500).json({ error: 'Failed to fetch users' });
+  }
+})
 app.post('/users', async (req, res) => {
   try {
     const { name, age } = req.body;
