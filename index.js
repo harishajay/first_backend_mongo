@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 4000;
 
 app.get('/', (req, res) => {
       console.log('Root route was hit');
-      res.send('Hello, World!');
+      res.send('Hello, Harish i hope you are doing well!');
     });
 
 app.post('/users', async (req, res) => {
